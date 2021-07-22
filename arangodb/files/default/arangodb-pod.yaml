@@ -1,0 +1,61 @@
+########################################################################
+# File managed by Salt at <{{ source }}>.
+# Your changes will be overwritten.
+########################################################################
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: {{ ARANGODB['projectname'] }}-arangodb-pod
+  name: {{ ARANGODB['projectname'] }}-arangodb-pod
+spec:
+  restartPolicy: {{ ARANGODB['arangodb']['restart_policy'] }}
+  containers:
+  - name: srv01
+    image: {{ ARANGODB['arangodb']['image'] }}
+    securityContext:
+      allowPrivilegeEscalation: false
+      privileged: false
+      capabilities:
+        add: []
+        drop:
+        - CAP_MKNOD
+        - CAP_NET_RAW
+        - CAP_AUDIT_WRITE
+      seLinuxOptions:
+        type: {{ ARANGODB['projectname'] }}_arangodb_pod_srv01.process
+    resources:
+      requests:
+        memory: {{ ARANGODB['arangodb']['resources']['requests']['memory'] }}
+        cpu: {{ ARANGODB['arangodb']['resources']['requests']['cpu'] }}
+      limits:
+        memory: {{ ARANGODB['arangodb']['resources']['limits']['memory'] }}
+        cpu: {{ ARANGODB['arangodb']['resources']['limits']['cpu'] }}
+    ports:
+    {%- if ARANGODB['arangodb']['port']['nonencrypted']['bind'] %}
+    - containerPort: {{ ARANGODB['arangodb']['port']['nonencrypted']['container'] }}
+      hostPort: {{ ARANGODB['arangodb']['port']['nonencrypted']['host'] }}
+      hostIP: {{ ARANGODB['arangodb']['port']['nonencrypted']['ip'] }}
+      protocol: {{ ARANGODB['arangodb']['port']['nonencrypted']['protocol'] }}
+    {%- endif %}
+    env:
+      - name: ARANGO_ROOT_PASSWORD
+        valueFrom:
+          configMapKeyRef:
+            name: arangodb-configmap
+            key: arangodb.root.password
+    volumeMounts:
+    - mountPath: /var/lib/arangodb3
+      name: arangodb-data
+      readOnly: false
+    - mountPath: /etc/arangodb3/arangod.conf
+      name: arangodb-config
+      readOnly: true
+  volumes:
+  - name: arangodb-data
+    persistentVolumeClaim:
+      claimName: {{ ARANGODB['projectname'] }}-arangodb-srv01-data
+  - name: arangodb-config
+    hostPath:
+      path: {{ ARANGODB['rootdir'] }}/arangod.conf

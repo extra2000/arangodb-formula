@@ -1,0 +1,9 @@
+name: arangodb
+os: Debian, Ubuntu, RedHat, Fedora, CentOS, Suse, openSUSE
+os_family: Debian, RedHat, Suse
+version: 0.0
+release: 1
+minimum_version: 3002.2
+summary: ArangoDB formula
+description: Formula to deploy ArangoDB
+top_level_dir: arangodb

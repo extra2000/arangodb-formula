@@ -1,0 +1,11 @@
+########################################################################
+# File managed by Salt at <{{ source }}>.
+# Your changes will be overwritten.
+########################################################################
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: arangodb-configmap
+data:
+  arangodb.root.password: "{{ ARANGODB['arangodb']['root_password'] }}"
