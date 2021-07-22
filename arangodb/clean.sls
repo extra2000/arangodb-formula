@@ -3,4 +3,7 @@
 
 include:
   - .podman.clean
+  {%- if grains['os_family'] == 'RedHat' %}
+  - .selinux.clean
+  {%- endif %}
   - .config.clean
