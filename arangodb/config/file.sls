@@ -54,3 +54,15 @@ ARANGODB-selinux-policy-file-managed:
     - template: jinja
     - context:
         ARANGODB: {{ ARANGODB | json }}
+
+ARANGODB-seccomp-file-managed:
+  file.managed:
+    - name: {{ ARANGODB.rootdir }}/seccomp/seccomp.json
+    - source: {{ files_switch(['seccomp.json']) }}
+    - mode: 644
+    - user: {{ ARANGODB.hostuser.name }}
+    - group: {{ ARANGODB.hostuser.group }}
+    - makedirs: True
+    - template: jinja
+    - context:
+        ARANGODB: {{ ARANGODB | json }}
