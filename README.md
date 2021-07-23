@@ -10,18 +10,18 @@ SaltStack Formula for [ArangoDB](https://www.arangodb.com/).
 ## Available states
 
 - [`arangodb`](#arangodb)
-- [`arangodb.config`](#arangodb.config)
-- [`arangodb.config.clean`](#arangodb.config.clean)
-- [`arangodb.selinux`](#arangodb.selinux)
-- [`arangodb.selinux.clean`](#arangodb.selinux.clean)
-- [`arangodb.podman`](#arangodb.podman)
-- [`arangodb.podman.image`](#arangodb.podman.image)
-- [`arangodb.podman.image.clean`](#arangodb.podman.image.clean)
-- [`arangodb.podman.deploy`](#arangodb.podman.deploy)
-- [`arangodb.podman.destroy`](#arangodb.podman.destroy)
-- [`arangodb.podman.volume.clean`](#arangodb.podman.volume.clean)
-- [`arangodb.podman.clean`](#arangodb.podman.clean)
-- [`arangodb.clean`](#arangodb.clean)
+- [`arangodb.config`](#arangodbconfig)
+- [`arangodb.config.clean`](#arangodbconfigclean)
+- [`arangodb.selinux`](#arangodbselinux)
+- [`arangodb.selinux.clean`](#arangodbselinuxclean)
+- [`arangodb.podman`](#arangodbpodman)
+- [`arangodb.podman.image`](#arangodbpodmanimage)
+- [`arangodb.podman.image.clean`](#arangodbpodmanimageclean)
+- [`arangodb.podman.deploy`](#arangodbpodmandeploy)
+- [`arangodb.podman.destroy`](#arangodbpodmandestroy)
+- [`arangodb.podman.volume.clean`](#arangodbpodmanvolumeclean)
+- [`arangodb.podman.clean`](#arangodbpodmanclean)
+- [`arangodb.clean`](#arangodbclean)
 
 
 ### `arangodb`
