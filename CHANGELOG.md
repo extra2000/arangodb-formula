@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.1.0](https://github.com/extra2000/arangodb-formula/compare/v1.0.0...v1.1.0) (2021-07-23)
+
+
+### Features
+
+* **seccomp:** add default `seccomp` profile ([ead96ea](https://github.com/extra2000/arangodb-formula/commit/ead96eae4e2052e8a50763955f8ab77096c9d22c))
+
+
+### Fixes
+
+* **arangodb.clean:** forgot to clean SELinux policy ([87cf929](https://github.com/extra2000/arangodb-formula/commit/87cf92963c8d65f26fa7fbf23455ce505350d1f5))
+
+
+### Continuous Integrations
+
+* **AppVeyor:** add instruction for `arangodb` state ([944fbff](https://github.com/extra2000/arangodb-formula/commit/944fbffcc98b4ac032a5bd0d0dc76fd9c5032e19))
+* **AppVeyor:** add Podman installation ([af84f89](https://github.com/extra2000/arangodb-formula/commit/af84f898a37740997b00ba7a4ef2760e57453c52))
+* **AppVeyor:** add SaltStack `v3003.1` installation ([3061d30](https://github.com/extra2000/arangodb-formula/commit/3061d3003e3b3845084f14e817dc008f878d03a0))
+* **AppVeyor:** add workaround for SaltStack jinja2 `3.0.x` bug ([895ad69](https://github.com/extra2000/arangodb-formula/commit/895ad69c486cd2c2fba73437fc66b0afb5ab50ac))
+
+
+### Documentations
+
+* **README:** fix Subsubsection links ([2497092](https://github.com/extra2000/arangodb-formula/commit/249709241dff0abe71608beb8b3d2c9748bd714f))
+
 ## 1.0.0 (2021-07-22)
 
 
