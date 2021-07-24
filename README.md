@@ -7,6 +7,24 @@
 SaltStack Formula for [ArangoDB](https://www.arangodb.com/).
 
 
+## Prerequisites
+
+Make sure you have Podman `v3.0.1` and above installed. Then, continue to the following Subsections below.
+
+
+### Increase `vm.max_map_count` to at least `1024000`
+
+Execute:
+```
+sudo sysctl -w "vm.max_map_count=1024000"
+```
+
+Create `/etc/sysctl.d/vm-max-map-counts.conf` file with the following line:
+```
+vm.max_map_count=1024000
+```
+
+
 ## Available states
 
 - [`arangodb`](#arangodb)
