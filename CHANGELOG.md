@@ -1,5 +1,23 @@
 # Changelog
 
+### [1.1.1](https://github.com/extra2000/arangodb-formula/compare/v1.1.0...v1.1.1) (2021-07-24)
+
+
+### Code Refactoring
+
+* **podman-network:** rename Podman network `.conflist` file ([5027de0](https://github.com/extra2000/arangodb-formula/commit/5027de024ee1e15944b9fcd95e7101909e14e634))
+
+
+### Documentations
+
+* **README:** add Section Prerequisites ([8212c70](https://github.com/extra2000/arangodb-formula/commit/8212c708d092ebdc2202a9f4ceeb1c73d75cfda5))
+
+
+### Fixes
+
+* **podman-network:** fix Podman network doesn't properly isolated per project name ([0f66705](https://github.com/extra2000/arangodb-formula/commit/0f66705b5bde6c791ac00b8ffb8532466e5bee35))
+* **selinux:** allow `unreserved_port_t:tcp_socket name_connect` ([102eca4](https://github.com/extra2000/arangodb-formula/commit/102eca454941068fa5522815a1b6a2d34039451d))
+
 ## [1.1.0](https://github.com/extra2000/arangodb-formula/compare/v1.0.0...v1.1.0) (2021-07-23)
 
 
