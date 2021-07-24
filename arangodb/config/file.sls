@@ -34,7 +34,7 @@ ARANGODB-podman-network-file-managed:
     {%- else %}
     - name: /home/{{ ARANGODB.hostuser.name }}/.config/cni/net.d/podman-network-{{ ARANGODB.pod.network.domain_name }}.conflist
     {%- endif %}
-    - source: {{ files_switch(['podman-network-arangodbnet.conflist']) }}
+    - source: {{ files_switch(['podman-network.conflist']) }}
     - mode: 644
     - user: {{ ARANGODB.hostuser.name }}
     - group: {{ ARANGODB.hostuser.group }}
