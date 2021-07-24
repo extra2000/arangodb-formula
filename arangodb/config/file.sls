@@ -30,9 +30,9 @@ ARANGODB-{{ container_file }}-file-managed:
 ARANGODB-podman-network-file-managed:
   file.managed:
     {%- if ARANGODB.hostuser.name == 'root' %}
-    - name: /etc/cni/net.d/podman-network-arangodbnet.conflist
+    - name: /etc/cni/net.d/podman-network-{{ ARANGODB.pod.network.domain_name }}.conflist
     {%- else %}
-    - name: /home/{{ ARANGODB.hostuser.name }}/.config/cni/net.d/podman-network-arangodbnet.conflist
+    - name: /home/{{ ARANGODB.hostuser.name }}/.config/cni/net.d/podman-network-{{ ARANGODB.pod.network.domain_name }}.conflist
     {%- endif %}
     - source: {{ files_switch(['podman-network-arangodbnet.conflist']) }}
     - mode: 644

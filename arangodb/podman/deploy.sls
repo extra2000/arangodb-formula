@@ -7,6 +7,6 @@
 
 ARANGODB-pod-present:
   cmd.run:
-    - name: podman play kube --network=arangodbnet --configmap arangodb-configmap.yaml --seccomp-profile-root {{ ARANGODB['rootdir'] }}/seccomp arangodb-pod.yaml
+    - name: podman play kube --network={{ ARANGODB.pod.network.domain_name }} --configmap arangodb-configmap.yaml --seccomp-profile-root {{ ARANGODB['rootdir'] }}/seccomp arangodb-pod.yaml
     - cwd: {{ ARANGODB.rootdir }}
     - runas: {{ ARANGODB.hostuser.name }}
