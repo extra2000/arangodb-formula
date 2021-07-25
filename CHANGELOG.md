@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/extra2000/arangodb-formula/compare/v1.1.1...v1.2.0) (2021-07-25)
+
+
+### Features
+
+* **network:** add option to use Podman default network ([ea4b6b7](https://github.com/extra2000/arangodb-formula/commit/ea4b6b7badd6b6dae62a932ff3a4a2fed310552c))
+* **seccomp:** add option to disable SecComp ([e031b97](https://github.com/extra2000/arangodb-formula/commit/e031b9748b0855d1d71fd5d26817c1f961c9d817))
+
 ### [1.1.1](https://github.com/extra2000/arangodb-formula/compare/v1.1.0...v1.1.1) (2021-07-24)
 
 
