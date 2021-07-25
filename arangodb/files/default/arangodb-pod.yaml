@@ -6,8 +6,10 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  {%- if ARANGODB.arangodb.use_seccomp %}
   annotations:
     seccomp.security.alpha.kubernetes.io/pod: localhost/seccomp.json
+  {%- endif %}
   labels:
     app: {{ ARANGODB['projectname'] }}-arangodb-pod
   name: {{ ARANGODB['projectname'] }}-arangodb-pod

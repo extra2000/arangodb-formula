@@ -11,8 +11,14 @@
 {%- set network_param = '--network="' + ARANGODB.pod.network.domain_name + '"' %}
 {%- endif %}
 
+{%- if ARANGODB.arangodb.use_seccomp %}
+{%- set seccomp_param = '--seccomp-profile-root="' + ARANGODB.rootdir + '/seccomp"' %}
+{%- else %}
+{%- set seccomp_param = '' %}
+{%- endif %}
+
 ARANGODB-pod-present:
   cmd.run:
-    - name: podman play kube {{ network_param }} --configmap arangodb-configmap.yaml --seccomp-profile-root {{ ARANGODB['rootdir'] }}/seccomp arangodb-pod.yaml
+    - name: podman play kube {{ network_param }} --configmap arangodb-configmap.yaml {{ seccomp_param }} arangodb-pod.yaml
     - cwd: {{ ARANGODB.rootdir }}
     - runas: {{ ARANGODB.hostuser.name }}

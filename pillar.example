@@ -17,6 +17,7 @@ arangodb:
         bridge: cni-podman1
     arangodb:
       restart_policy: OnFailure
+      use_seccomp: true
       port:
         nonencrypted:
           container: 8529

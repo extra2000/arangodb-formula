@@ -19,6 +19,7 @@ values:
   arangodb:
     image: docker.io/arangodb/arangodb:3.7.12
     restart_policy: OnFailure
+    use_seccomp: true
     port:
       nonencrypted:
         container: 8529
